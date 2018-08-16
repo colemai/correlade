@@ -3,12 +3,12 @@
 /* BEGIN: Cython Metadata
 {
     "distutils": {
-        "name": "distcorr",
+        "name": "correlade",
         "sources": [
-            "distcorr.pyx"
+            "correlade.pyx"
         ]
     },
-    "module_name": "distcorr"
+    "module_name": "correlade"
 }
 END: Cython Metadata */
 
@@ -571,8 +571,8 @@ static CYTHON_INLINE float __PYX_NAN() {
   #endif
 #endif
 
-#define __PYX_HAVE__distcorr
-#define __PYX_HAVE_API__distcorr
+#define __PYX_HAVE__correlade
+#define __PYX_HAVE_API__correlade
 /* Early includes */
 #ifdef _OPENMP
 #include <omp.h>
@@ -777,35 +777,22 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "distcorr.pyx",
+  "correlade.pyx",
 };
 
 /*--- Type declarations ---*/
-struct __pyx_opt_args_8distcorr_dist_corr;
-struct __pyx_opt_args_8distcorr_dist_corr_matrix;
+struct __pyx_opt_args_9correlade_dcorr;
 
-/* "distcorr.pyx":20
+/* "correlade.pyx":22
  * 
- * # Dcor
- * cpdef dist_corr (df, graph=None):             # <<<<<<<<<<<<<<
- * 	matrix = dist_corr_matrix(df)
- * 	print(matrix)
+ * 
+ * cpdef dcorr (df, graph=None):             # <<<<<<<<<<<<<<
+ * 	"""
+ * 
  */
-struct __pyx_opt_args_8distcorr_dist_corr {
+struct __pyx_opt_args_9correlade_dcorr {
   int __pyx_n;
   PyObject *graph;
-};
-
-/* "distcorr.pyx":27
- * 
- * 
- * cpdef dist_corr_matrix (df, subset_of = False):             # <<<<<<<<<<<<<<
- * 	matrix = pd.DataFrame(index = df.columns, columns = df.columns)
- * 	rows = df.shape[0]
- */
-struct __pyx_opt_args_8distcorr_dist_corr_matrix {
-  int __pyx_n;
-  PyObject *subset_of;
 };
 
 /* --- Runtime support code (head) --- */
@@ -1125,14 +1112,14 @@ static int __Pyx_check_binary_version(void);
 static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
 
-/* Module declarations from 'distcorr' */
-static PyObject *__pyx_f_8distcorr_dist_corr(PyObject *, int __pyx_skip_dispatch, struct __pyx_opt_args_8distcorr_dist_corr *__pyx_optional_args); /*proto*/
-static PyObject *__pyx_f_8distcorr_dist_corr_matrix(PyObject *, int __pyx_skip_dispatch, struct __pyx_opt_args_8distcorr_dist_corr_matrix *__pyx_optional_args); /*proto*/
-#define __Pyx_MODULE_NAME "distcorr"
-extern int __pyx_module_is_main_distcorr;
-int __pyx_module_is_main_distcorr = 0;
+/* Module declarations from 'correlade' */
+static PyObject *__pyx_f_9correlade_dcorr(PyObject *, int __pyx_skip_dispatch, struct __pyx_opt_args_9correlade_dcorr *__pyx_optional_args); /*proto*/
+static PyObject *__pyx_f_9correlade_dcorr_matrix(PyObject *, int __pyx_skip_dispatch); /*proto*/
+#define __Pyx_MODULE_NAME "correlade"
+extern int __pyx_module_is_main_correlade;
+int __pyx_module_is_main_correlade = 0;
 
-/* Implementation of 'distcorr' */
+/* Implementation of 'correlade' */
 static PyObject *__pyx_builtin_range;
 static const char __pyx_k_df[] = "df";
 static const char __pyx_k_pd[] = "pd";
@@ -1160,16 +1147,15 @@ static const char __pyx_k_columns[] = "columns";
 static const char __pyx_k_float64[] = "float64";
 static const char __pyx_k_heatmap[] = "heatmap";
 static const char __pyx_k_seaborn[] = "seaborn";
-static const char __pyx_k_distcorr[] = "distcorr";
 static const char __pyx_k_DataFrame[] = "DataFrame";
-static const char __pyx_k_subset_of[] = "subset_of";
+static const char __pyx_k_correlade[] = "correlade";
 static const char __pyx_k_transform[] = "transform";
-static const char __pyx_k_distcorr_pyx[] = "distcorr.pyx";
+static const char __pyx_k_correlade_pyx[] = "correlade.pyx";
 static const char __pyx_k_matrix_heatmap[] = "matrix_heatmap";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
 static const char __pyx_k_distance_correlation[] = "distance_correlation";
 static const char __pyx_k_matrix_heatmap_locals_lambda[] = "matrix_heatmap.<locals>.<lambda>";
-static const char __pyx_k_Author_Ian_Coleman_Purpose_Dist[] = "\nAuthor: Ian Coleman\nPurpose: Distance Correlation matrix and graphic for Pandas\n\nTODO:\nchange dist_corr to a self method\nchange subset_of to length of df\nadd graphic element \nreplace the dcor package with the actual formula and code\n";
+static const char __pyx_k_Author_Ian_Coleman_Purpose_Dist[] = "\nAuthor: Ian Coleman\nPurpose: Distance Correlation matrix and graphic for Pandas\n\nTODO:\nchange dist_corr to a self method\nchange subset_of to length of df\nadd graphic element \nreplace the dcor package with the actual formula and code\ndocumentation to be fitted to standards\ncheck what happens in edge cases e.g string in df\nnumber of chars on each line\n";
 static const char __pyx_k_Attempting_graph_assuming_Pandas[] = "Attempting graph --> assuming Pandas in Jupyter";
 static PyObject *__pyx_kp_s_Attempting_graph_assuming_Pandas;
 static PyObject *__pyx_n_s_DataFrame;
@@ -1178,11 +1164,11 @@ static PyObject *__pyx_n_s_astype;
 static PyObject *__pyx_n_s_axis;
 static PyObject *__pyx_n_s_cline_in_traceback;
 static PyObject *__pyx_n_s_columns;
+static PyObject *__pyx_n_s_correlade;
+static PyObject *__pyx_kp_s_correlade_pyx;
 static PyObject *__pyx_n_s_dcor;
 static PyObject *__pyx_n_s_df;
 static PyObject *__pyx_n_s_distance_correlation;
-static PyObject *__pyx_n_s_distcorr;
-static PyObject *__pyx_kp_s_distcorr_pyx;
 static PyObject *__pyx_n_s_end;
 static PyObject *__pyx_n_s_file;
 static PyObject *__pyx_n_s_float64;
@@ -1203,14 +1189,13 @@ static PyObject *__pyx_n_s_sample;
 static PyObject *__pyx_n_s_seaborn;
 static PyObject *__pyx_n_s_shape;
 static PyObject *__pyx_n_s_sns;
-static PyObject *__pyx_n_s_subset_of;
 static PyObject *__pyx_n_s_sys;
 static PyObject *__pyx_n_s_test;
 static PyObject *__pyx_n_s_transform;
-static PyObject *__pyx_pf_8distcorr_dist_corr(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_df, PyObject *__pyx_v_graph); /* proto */
-static PyObject *__pyx_pf_8distcorr_2dist_corr_matrix(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_df, PyObject *__pyx_v_subset_of); /* proto */
+static PyObject *__pyx_pf_9correlade_dcorr(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_df, PyObject *__pyx_v_graph); /* proto */
+static PyObject *__pyx_pf_9correlade_2dcorr_matrix(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_df); /* proto */
 static PyObject *__pyx_lambda_funcdef_lambda(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_x); /* proto */
-static PyObject *__pyx_pf_8distcorr_4matrix_heatmap(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix); /* proto */
+static PyObject *__pyx_pf_9correlade_4matrix_heatmap(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix); /* proto */
 static PyObject *__pyx_int_0;
 static PyObject *__pyx_int_1;
 static PyObject *__pyx_int_2000;
@@ -1221,16 +1206,16 @@ static PyObject *__pyx_tuple__4;
 static PyObject *__pyx_codeobj__5;
 /* Late includes */
 
-/* "distcorr.pyx":20
+/* "correlade.pyx":22
  * 
- * # Dcor
- * cpdef dist_corr (df, graph=None):             # <<<<<<<<<<<<<<
- * 	matrix = dist_corr_matrix(df)
- * 	print(matrix)
+ * 
+ * cpdef dcorr (df, graph=None):             # <<<<<<<<<<<<<<
+ * 	"""
+ * 
  */
 
-static PyObject *__pyx_pw_8distcorr_1dist_corr(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_f_8distcorr_dist_corr(PyObject *__pyx_v_df, CYTHON_UNUSED int __pyx_skip_dispatch, struct __pyx_opt_args_8distcorr_dist_corr *__pyx_optional_args) {
+static PyObject *__pyx_pw_9correlade_1dcorr(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_f_9correlade_dcorr(PyObject *__pyx_v_df, CYTHON_UNUSED int __pyx_skip_dispatch, struct __pyx_opt_args_9correlade_dcorr *__pyx_optional_args) {
   PyObject *__pyx_v_graph = ((PyObject *)Py_None);
   PyObject *__pyx_v_matrix = NULL;
   PyObject *__pyx_r = NULL;
@@ -1241,37 +1226,37 @@ static PyObject *__pyx_f_8distcorr_dist_corr(PyObject *__pyx_v_df, CYTHON_UNUSED
   PyObject *__pyx_t_4 = NULL;
   PyObject *__pyx_t_5 = NULL;
   PyObject *__pyx_t_6 = NULL;
-  __Pyx_RefNannySetupContext("dist_corr", 0);
+  __Pyx_RefNannySetupContext("dcorr", 0);
   if (__pyx_optional_args) {
     if (__pyx_optional_args->__pyx_n > 0) {
       __pyx_v_graph = __pyx_optional_args->graph;
     }
   }
 
-  /* "distcorr.pyx":21
- * # Dcor
- * cpdef dist_corr (df, graph=None):
- * 	matrix = dist_corr_matrix(df)             # <<<<<<<<<<<<<<
+  /* "correlade.pyx":39
+ * 	"""
+ * 
+ * 	matrix = dcorr_matrix(df)             # <<<<<<<<<<<<<<
  * 	print(matrix)
- * 	if graph is not None:
+ * 
  */
-  __pyx_t_1 = __pyx_f_8distcorr_dist_corr_matrix(__pyx_v_df, 0, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 21, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_9correlade_dcorr_matrix(__pyx_v_df, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 39, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_matrix = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "distcorr.pyx":22
- * cpdef dist_corr (df, graph=None):
- * 	matrix = dist_corr_matrix(df)
+  /* "correlade.pyx":40
+ * 
+ * 	matrix = dcorr_matrix(df)
  * 	print(matrix)             # <<<<<<<<<<<<<<
+ * 
  * 	if graph is not None:
- * 		matrix_heatmap(matrix)
  */
-  if (__Pyx_PrintOne(0, __pyx_v_matrix) < 0) __PYX_ERR(0, 22, __pyx_L1_error)
+  if (__Pyx_PrintOne(0, __pyx_v_matrix) < 0) __PYX_ERR(0, 40, __pyx_L1_error)
 
-  /* "distcorr.pyx":23
- * 	matrix = dist_corr_matrix(df)
+  /* "correlade.pyx":42
  * 	print(matrix)
+ * 
  * 	if graph is not None:             # <<<<<<<<<<<<<<
  * 		matrix_heatmap(matrix)
  * 
@@ -1280,14 +1265,14 @@ static PyObject *__pyx_f_8distcorr_dist_corr(PyObject *__pyx_v_df, CYTHON_UNUSED
   __pyx_t_3 = (__pyx_t_2 != 0);
   if (__pyx_t_3) {
 
-    /* "distcorr.pyx":24
- * 	print(matrix)
+    /* "correlade.pyx":43
+ * 
  * 	if graph is not None:
  * 		matrix_heatmap(matrix)             # <<<<<<<<<<<<<<
  * 
  * 
  */
-    __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_matrix_heatmap); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 24, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_matrix_heatmap); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 43, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_t_5 = NULL;
     if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_4))) {
@@ -1300,13 +1285,13 @@ static PyObject *__pyx_f_8distcorr_dist_corr(PyObject *__pyx_v_df, CYTHON_UNUSED
       }
     }
     if (!__pyx_t_5) {
-      __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_v_matrix); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 24, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_v_matrix); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 43, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
     } else {
       #if CYTHON_FAST_PYCALL
       if (PyFunction_Check(__pyx_t_4)) {
         PyObject *__pyx_temp[2] = {__pyx_t_5, __pyx_v_matrix};
-        __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_4, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 24, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_4, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 43, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_GOTREF(__pyx_t_1);
       } else
@@ -1314,19 +1299,19 @@ static PyObject *__pyx_f_8distcorr_dist_corr(PyObject *__pyx_v_df, CYTHON_UNUSED
       #if CYTHON_FAST_PYCCALL
       if (__Pyx_PyFastCFunction_Check(__pyx_t_4)) {
         PyObject *__pyx_temp[2] = {__pyx_t_5, __pyx_v_matrix};
-        __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_4, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 24, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_4, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 43, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
         __Pyx_GOTREF(__pyx_t_1);
       } else
       #endif
       {
-        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 24, __pyx_L1_error)
+        __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 43, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
         __Pyx_INCREF(__pyx_v_matrix);
         __Pyx_GIVEREF(__pyx_v_matrix);
         PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_v_matrix);
-        __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 24, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 43, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
@@ -1334,21 +1319,21 @@ static PyObject *__pyx_f_8distcorr_dist_corr(PyObject *__pyx_v_df, CYTHON_UNUSED
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "distcorr.pyx":23
- * 	matrix = dist_corr_matrix(df)
+    /* "correlade.pyx":42
  * 	print(matrix)
+ * 
  * 	if graph is not None:             # <<<<<<<<<<<<<<
  * 		matrix_heatmap(matrix)
  * 
  */
   }
 
-  /* "distcorr.pyx":20
+  /* "correlade.pyx":22
  * 
- * # Dcor
- * cpdef dist_corr (df, graph=None):             # <<<<<<<<<<<<<<
- * 	matrix = dist_corr_matrix(df)
- * 	print(matrix)
+ * 
+ * cpdef dcorr (df, graph=None):             # <<<<<<<<<<<<<<
+ * 	"""
+ * 
  */
 
   /* function exit code */
@@ -1359,7 +1344,7 @@ static PyObject *__pyx_f_8distcorr_dist_corr(PyObject *__pyx_v_df, CYTHON_UNUSED
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_6);
-  __Pyx_AddTraceback("distcorr.dist_corr", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("correlade.dcorr", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_matrix);
@@ -1369,13 +1354,14 @@ static PyObject *__pyx_f_8distcorr_dist_corr(PyObject *__pyx_v_df, CYTHON_UNUSED
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_8distcorr_1dist_corr(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_8distcorr_1dist_corr(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_9correlade_1dcorr(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static char __pyx_doc_9correlade_dcorr[] = "\n\n\tMaster function\n\n\tCreates matrix of distance correlation values for each pairing of columns\n\tin the provided dataframe\n\n\tIf there are more than 2000 rows or columns, a random selection of 2000\n\tare used for the calculation\n\n\tParameters:\n\tdf --> a dataframe of numerical values\n\tgraph --> give any int here if you want a heatmap of the correlation matrix\n\n\t";
+static PyObject *__pyx_pw_9correlade_1dcorr(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_df = 0;
   PyObject *__pyx_v_graph = 0;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("dist_corr (wrapper)", 0);
+  __Pyx_RefNannySetupContext("dcorr (wrapper)", 0);
   {
     static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_df,&__pyx_n_s_graph,0};
     PyObject* values[2] = {0,0};
@@ -1404,7 +1390,7 @@ static PyObject *__pyx_pw_8distcorr_1dist_corr(PyObject *__pyx_self, PyObject *_
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "dist_corr") < 0)) __PYX_ERR(0, 20, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "dcorr") < 0)) __PYX_ERR(0, 22, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -1420,29 +1406,29 @@ static PyObject *__pyx_pw_8distcorr_1dist_corr(PyObject *__pyx_self, PyObject *_
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("dist_corr", 0, 1, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 20, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("dcorr", 0, 1, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 22, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("distcorr.dist_corr", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("correlade.dcorr", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_8distcorr_dist_corr(__pyx_self, __pyx_v_df, __pyx_v_graph);
+  __pyx_r = __pyx_pf_9correlade_dcorr(__pyx_self, __pyx_v_df, __pyx_v_graph);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_8distcorr_dist_corr(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_df, PyObject *__pyx_v_graph) {
+static PyObject *__pyx_pf_9correlade_dcorr(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_df, PyObject *__pyx_v_graph) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
-  struct __pyx_opt_args_8distcorr_dist_corr __pyx_t_2;
-  __Pyx_RefNannySetupContext("dist_corr", 0);
+  struct __pyx_opt_args_9correlade_dcorr __pyx_t_2;
+  __Pyx_RefNannySetupContext("dcorr", 0);
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_2.__pyx_n = 1;
   __pyx_t_2.graph = __pyx_v_graph;
-  __pyx_t_1 = __pyx_f_8distcorr_dist_corr(__pyx_v_df, 0, &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 20, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_9correlade_dcorr(__pyx_v_df, 0, &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 22, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -1451,7 +1437,7 @@ static PyObject *__pyx_pf_8distcorr_dist_corr(CYTHON_UNUSED PyObject *__pyx_self
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("distcorr.dist_corr", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("correlade.dcorr", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -1459,16 +1445,16 @@ static PyObject *__pyx_pf_8distcorr_dist_corr(CYTHON_UNUSED PyObject *__pyx_self
   return __pyx_r;
 }
 
-/* "distcorr.pyx":27
+/* "correlade.pyx":46
  * 
  * 
- * cpdef dist_corr_matrix (df, subset_of = False):             # <<<<<<<<<<<<<<
- * 	matrix = pd.DataFrame(index = df.columns, columns = df.columns)
- * 	rows = df.shape[0]
+ * cpdef dcorr_matrix (df):             # <<<<<<<<<<<<<<
+ * 	"""
+ * 	Creates matrix of distance correlations
  */
 
-static PyObject *__pyx_pw_8distcorr_3dist_corr_matrix(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_f_8distcorr_dist_corr_matrix(PyObject *__pyx_v_df, CYTHON_UNUSED int __pyx_skip_dispatch, struct __pyx_opt_args_8distcorr_dist_corr_matrix *__pyx_optional_args) {
+static PyObject *__pyx_pw_9correlade_3dcorr_matrix(PyObject *__pyx_self, PyObject *__pyx_v_df); /*proto*/
+static PyObject *__pyx_f_9correlade_dcorr_matrix(PyObject *__pyx_v_df, CYTHON_UNUSED int __pyx_skip_dispatch) {
   PyObject *__pyx_v_matrix = NULL;
   PyObject *__pyx_v_rows = NULL;
   PyObject *__pyx_v_cols = NULL;
@@ -1493,179 +1479,177 @@ static PyObject *__pyx_f_8distcorr_dist_corr_matrix(PyObject *__pyx_v_df, CYTHON
   PyObject *__pyx_t_13 = NULL;
   PyObject *__pyx_t_14 = NULL;
   int __pyx_t_15;
-  __Pyx_RefNannySetupContext("dist_corr_matrix", 0);
-  if (__pyx_optional_args) {
-  }
+  __Pyx_RefNannySetupContext("dcorr_matrix", 0);
   __Pyx_INCREF(__pyx_v_df);
 
-  /* "distcorr.pyx":28
+  /* "correlade.pyx":52
  * 
- * cpdef dist_corr_matrix (df, subset_of = False):
+ * 	# Make empty df to house correlation values
  * 	matrix = pd.DataFrame(index = df.columns, columns = df.columns)             # <<<<<<<<<<<<<<
- * 	rows = df.shape[0]
- * 	cols = df.shape[1]
+ * 
+ * 	# Ensure no more than 2000 rows
  */
-  __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_pd); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 28, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_pd); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 52, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_DataFrame); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 28, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_DataFrame); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 52, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 28, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 52, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_df, __pyx_n_s_columns); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 28, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_df, __pyx_n_s_columns); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 52, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_index, __pyx_t_3) < 0) __PYX_ERR(0, 28, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_index, __pyx_t_3) < 0) __PYX_ERR(0, 52, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_df, __pyx_n_s_columns); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 28, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_df, __pyx_n_s_columns); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 52, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_columns, __pyx_t_3) < 0) __PYX_ERR(0, 28, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_columns, __pyx_t_3) < 0) __PYX_ERR(0, 52, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_empty_tuple, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 28, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_empty_tuple, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 52, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_matrix = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "distcorr.pyx":29
- * cpdef dist_corr_matrix (df, subset_of = False):
- * 	matrix = pd.DataFrame(index = df.columns, columns = df.columns)
+  /* "correlade.pyx":55
+ * 
+ * 	# Ensure no more than 2000 rows
  * 	rows = df.shape[0]             # <<<<<<<<<<<<<<
  * 	cols = df.shape[1]
- * 
+ * 	if rows > 2000:
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_df, __pyx_n_s_shape); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 29, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_df, __pyx_n_s_shape); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 55, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_3, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 29, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_3, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 55, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_rows = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "distcorr.pyx":30
- * 	matrix = pd.DataFrame(index = df.columns, columns = df.columns)
+  /* "correlade.pyx":56
+ * 	# Ensure no more than 2000 rows
  * 	rows = df.shape[0]
  * 	cols = df.shape[1]             # <<<<<<<<<<<<<<
- * 
  * 	if rows > 2000:
+ * 		df = df.sample(2000)
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_df, __pyx_n_s_shape); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 30, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_df, __pyx_n_s_shape); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 56, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_GetItemInt(__pyx_t_1, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 30, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_GetItemInt(__pyx_t_1, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 56, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_cols = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "distcorr.pyx":32
+  /* "correlade.pyx":57
+ * 	rows = df.shape[0]
  * 	cols = df.shape[1]
- * 
  * 	if rows > 2000:             # <<<<<<<<<<<<<<
  * 		df = df.sample(2000)
- * 
+ * 	if cols > 2000:
  */
-  __pyx_t_3 = PyObject_RichCompare(__pyx_v_rows, __pyx_int_2000, Py_GT); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 32, __pyx_L1_error)
-  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 32, __pyx_L1_error)
+  __pyx_t_3 = PyObject_RichCompare(__pyx_v_rows, __pyx_int_2000, Py_GT); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 57, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 57, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   if (__pyx_t_4) {
 
-    /* "distcorr.pyx":33
- * 
+    /* "correlade.pyx":58
+ * 	cols = df.shape[1]
  * 	if rows > 2000:
  * 		df = df.sample(2000)             # <<<<<<<<<<<<<<
- * 
  * 	if cols > 2000:
+ * 		df = df.sample(2000, axis = 1)
  */
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_df, __pyx_n_s_sample); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 33, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_df, __pyx_n_s_sample); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 58, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_tuple_, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 33, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_tuple_, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 58, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF_SET(__pyx_v_df, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "distcorr.pyx":32
+    /* "correlade.pyx":57
+ * 	rows = df.shape[0]
  * 	cols = df.shape[1]
- * 
  * 	if rows > 2000:             # <<<<<<<<<<<<<<
  * 		df = df.sample(2000)
- * 
+ * 	if cols > 2000:
  */
   }
 
-  /* "distcorr.pyx":35
+  /* "correlade.pyx":59
+ * 	if rows > 2000:
  * 		df = df.sample(2000)
- * 
  * 	if cols > 2000:             # <<<<<<<<<<<<<<
  * 		df = df.sample(2000, axis = 1)
  * 
  */
-  __pyx_t_1 = PyObject_RichCompare(__pyx_v_cols, __pyx_int_2000, Py_GT); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 35, __pyx_L1_error)
-  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 35, __pyx_L1_error)
+  __pyx_t_1 = PyObject_RichCompare(__pyx_v_cols, __pyx_int_2000, Py_GT); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 59, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 59, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_4) {
 
-    /* "distcorr.pyx":36
- * 
+    /* "correlade.pyx":60
+ * 		df = df.sample(2000)
  * 	if cols > 2000:
  * 		df = df.sample(2000, axis = 1)             # <<<<<<<<<<<<<<
  * 
  * 	cdef int no_rows = df.shape[0]
  */
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_df, __pyx_n_s_sample); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 36, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_df, __pyx_n_s_sample); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 60, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 36, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 60, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_axis, __pyx_int_1) < 0) __PYX_ERR(0, 36, __pyx_L1_error)
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__2, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 36, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_axis, __pyx_int_1) < 0) __PYX_ERR(0, 60, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__2, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 60, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF_SET(__pyx_v_df, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "distcorr.pyx":35
+    /* "correlade.pyx":59
+ * 	if rows > 2000:
  * 		df = df.sample(2000)
- * 
  * 	if cols > 2000:             # <<<<<<<<<<<<<<
  * 		df = df.sample(2000, axis = 1)
  * 
  */
   }
 
-  /* "distcorr.pyx":38
+  /* "correlade.pyx":62
  * 		df = df.sample(2000, axis = 1)
  * 
  * 	cdef int no_rows = df.shape[0]             # <<<<<<<<<<<<<<
  * 	cdef int no_cols = df.shape[1]
  * 	cdef int x, y
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_df, __pyx_n_s_shape); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 38, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_df, __pyx_n_s_shape); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 62, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_GetItemInt(__pyx_t_2, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 38, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_GetItemInt(__pyx_t_2, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 62, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_5 = __Pyx_PyInt_As_int(__pyx_t_3); if (unlikely((__pyx_t_5 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 38, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyInt_As_int(__pyx_t_3); if (unlikely((__pyx_t_5 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 62, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_no_rows = __pyx_t_5;
 
-  /* "distcorr.pyx":39
+  /* "correlade.pyx":63
  * 
  * 	cdef int no_rows = df.shape[0]
  * 	cdef int no_cols = df.shape[1]             # <<<<<<<<<<<<<<
  * 	cdef int x, y
  * 
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_df, __pyx_n_s_shape); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 39, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_df, __pyx_n_s_shape); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 63, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_3, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 39, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_3, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 63, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_5 = __Pyx_PyInt_As_int(__pyx_t_2); if (unlikely((__pyx_t_5 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 39, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyInt_As_int(__pyx_t_2); if (unlikely((__pyx_t_5 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 63, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_no_cols = __pyx_t_5;
 
-  /* "distcorr.pyx":42
+  /* "correlade.pyx":66
  * 	cdef int x, y
  * 
  * 	for x in range(0,no_cols):             # <<<<<<<<<<<<<<
@@ -1677,7 +1661,7 @@ static PyObject *__pyx_f_8distcorr_dist_corr_matrix(PyObject *__pyx_v_df, CYTHON
   for (__pyx_t_7 = 0; __pyx_t_7 < __pyx_t_6; __pyx_t_7+=1) {
     __pyx_v_x = __pyx_t_7;
 
-    /* "distcorr.pyx":43
+    /* "correlade.pyx":67
  * 
  * 	for x in range(0,no_cols):
  * 		for y in range(0,no_cols):             # <<<<<<<<<<<<<<
@@ -1689,28 +1673,28 @@ static PyObject *__pyx_f_8distcorr_dist_corr_matrix(PyObject *__pyx_v_df, CYTHON
     for (__pyx_t_10 = 0; __pyx_t_10 < __pyx_t_9; __pyx_t_10+=1) {
       __pyx_v_y = __pyx_t_10;
 
-      /* "distcorr.pyx":44
+      /* "correlade.pyx":68
  * 	for x in range(0,no_cols):
  * 		for y in range(0,no_cols):
  * 			matrix.iloc[y,x] = dcor.distance_correlation(df.iloc[0:no_rows, x], df.iloc[0:no_rows, y])             # <<<<<<<<<<<<<<
  * 
  * 	return matrix
  */
-      __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_dcor); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 44, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_dcor); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 68, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_distance_correlation); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 44, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_distance_correlation); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 68, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_df, __pyx_n_s_iloc); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 44, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_df, __pyx_n_s_iloc); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 68, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_11 = __Pyx_PyInt_From_int(__pyx_v_no_rows); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 44, __pyx_L1_error)
+      __pyx_t_11 = __Pyx_PyInt_From_int(__pyx_v_no_rows); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 68, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_11);
-      __pyx_t_12 = PySlice_New(__pyx_int_0, __pyx_t_11, Py_None); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 44, __pyx_L1_error)
+      __pyx_t_12 = PySlice_New(__pyx_int_0, __pyx_t_11, Py_None); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 68, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_12);
       __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-      __pyx_t_11 = __Pyx_PyInt_From_int(__pyx_v_x); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 44, __pyx_L1_error)
+      __pyx_t_11 = __Pyx_PyInt_From_int(__pyx_v_x); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 68, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_11);
-      __pyx_t_13 = PyTuple_New(2); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 44, __pyx_L1_error)
+      __pyx_t_13 = PyTuple_New(2); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 68, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_13);
       __Pyx_GIVEREF(__pyx_t_12);
       PyTuple_SET_ITEM(__pyx_t_13, 0, __pyx_t_12);
@@ -1718,20 +1702,20 @@ static PyObject *__pyx_f_8distcorr_dist_corr_matrix(PyObject *__pyx_v_df, CYTHON
       PyTuple_SET_ITEM(__pyx_t_13, 1, __pyx_t_11);
       __pyx_t_12 = 0;
       __pyx_t_11 = 0;
-      __pyx_t_11 = __Pyx_PyObject_GetItem(__pyx_t_3, __pyx_t_13); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 44, __pyx_L1_error)
+      __pyx_t_11 = __Pyx_PyObject_GetItem(__pyx_t_3, __pyx_t_13); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 68, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_11);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-      __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_v_df, __pyx_n_s_iloc); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 44, __pyx_L1_error)
+      __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_v_df, __pyx_n_s_iloc); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 68, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_13);
-      __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_no_rows); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 44, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_no_rows); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 68, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_12 = PySlice_New(__pyx_int_0, __pyx_t_3, Py_None); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 44, __pyx_L1_error)
+      __pyx_t_12 = PySlice_New(__pyx_int_0, __pyx_t_3, Py_None); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 68, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_12);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_y); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 44, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_y); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 68, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_14 = PyTuple_New(2); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 44, __pyx_L1_error)
+      __pyx_t_14 = PyTuple_New(2); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 68, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_14);
       __Pyx_GIVEREF(__pyx_t_12);
       PyTuple_SET_ITEM(__pyx_t_14, 0, __pyx_t_12);
@@ -1739,7 +1723,7 @@ static PyObject *__pyx_f_8distcorr_dist_corr_matrix(PyObject *__pyx_v_df, CYTHON
       PyTuple_SET_ITEM(__pyx_t_14, 1, __pyx_t_3);
       __pyx_t_12 = 0;
       __pyx_t_3 = 0;
-      __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_t_13, __pyx_t_14); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 44, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_t_13, __pyx_t_14); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 68, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
       __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
@@ -1758,7 +1742,7 @@ static PyObject *__pyx_f_8distcorr_dist_corr_matrix(PyObject *__pyx_v_df, CYTHON
       #if CYTHON_FAST_PYCALL
       if (PyFunction_Check(__pyx_t_1)) {
         PyObject *__pyx_temp[3] = {__pyx_t_14, __pyx_t_11, __pyx_t_3};
-        __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_15, 2+__pyx_t_15); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 44, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_15, 2+__pyx_t_15); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 68, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_14); __pyx_t_14 = 0;
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
@@ -1768,7 +1752,7 @@ static PyObject *__pyx_f_8distcorr_dist_corr_matrix(PyObject *__pyx_v_df, CYTHON
       #if CYTHON_FAST_PYCCALL
       if (__Pyx_PyFastCFunction_Check(__pyx_t_1)) {
         PyObject *__pyx_temp[3] = {__pyx_t_14, __pyx_t_11, __pyx_t_3};
-        __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_15, 2+__pyx_t_15); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 44, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_15, 2+__pyx_t_15); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 68, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_14); __pyx_t_14 = 0;
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
@@ -1776,7 +1760,7 @@ static PyObject *__pyx_f_8distcorr_dist_corr_matrix(PyObject *__pyx_v_df, CYTHON
       } else
       #endif
       {
-        __pyx_t_13 = PyTuple_New(2+__pyx_t_15); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 44, __pyx_L1_error)
+        __pyx_t_13 = PyTuple_New(2+__pyx_t_15); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 68, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_13);
         if (__pyx_t_14) {
           __Pyx_GIVEREF(__pyx_t_14); PyTuple_SET_ITEM(__pyx_t_13, 0, __pyx_t_14); __pyx_t_14 = NULL;
@@ -1787,18 +1771,18 @@ static PyObject *__pyx_f_8distcorr_dist_corr_matrix(PyObject *__pyx_v_df, CYTHON
         PyTuple_SET_ITEM(__pyx_t_13, 1+__pyx_t_15, __pyx_t_3);
         __pyx_t_11 = 0;
         __pyx_t_3 = 0;
-        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_13, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 44, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_13, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 68, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
       }
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_matrix, __pyx_n_s_iloc); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 44, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_matrix, __pyx_n_s_iloc); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 68, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_13 = __Pyx_PyInt_From_int(__pyx_v_y); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 44, __pyx_L1_error)
+      __pyx_t_13 = __Pyx_PyInt_From_int(__pyx_v_y); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 68, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_13);
-      __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_x); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 44, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_x); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 68, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_11 = PyTuple_New(2); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 44, __pyx_L1_error)
+      __pyx_t_11 = PyTuple_New(2); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 68, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_11);
       __Pyx_GIVEREF(__pyx_t_13);
       PyTuple_SET_ITEM(__pyx_t_11, 0, __pyx_t_13);
@@ -1806,14 +1790,14 @@ static PyObject *__pyx_f_8distcorr_dist_corr_matrix(PyObject *__pyx_v_df, CYTHON
       PyTuple_SET_ITEM(__pyx_t_11, 1, __pyx_t_3);
       __pyx_t_13 = 0;
       __pyx_t_3 = 0;
-      if (unlikely(PyObject_SetItem(__pyx_t_1, __pyx_t_11, __pyx_t_2) < 0)) __PYX_ERR(0, 44, __pyx_L1_error)
+      if (unlikely(PyObject_SetItem(__pyx_t_1, __pyx_t_11, __pyx_t_2) < 0)) __PYX_ERR(0, 68, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     }
   }
 
-  /* "distcorr.pyx":46
+  /* "correlade.pyx":70
  * 			matrix.iloc[y,x] = dcor.distance_correlation(df.iloc[0:no_rows, x], df.iloc[0:no_rows, y])
  * 
  * 	return matrix             # <<<<<<<<<<<<<<
@@ -1825,12 +1809,12 @@ static PyObject *__pyx_f_8distcorr_dist_corr_matrix(PyObject *__pyx_v_df, CYTHON
   __pyx_r = __pyx_v_matrix;
   goto __pyx_L0;
 
-  /* "distcorr.pyx":27
+  /* "correlade.pyx":46
  * 
  * 
- * cpdef dist_corr_matrix (df, subset_of = False):             # <<<<<<<<<<<<<<
- * 	matrix = pd.DataFrame(index = df.columns, columns = df.columns)
- * 	rows = df.shape[0]
+ * cpdef dcorr_matrix (df):             # <<<<<<<<<<<<<<
+ * 	"""
+ * 	Creates matrix of distance correlations
  */
 
   /* function exit code */
@@ -1842,7 +1826,7 @@ static PyObject *__pyx_f_8distcorr_dist_corr_matrix(PyObject *__pyx_v_df, CYTHON
   __Pyx_XDECREF(__pyx_t_12);
   __Pyx_XDECREF(__pyx_t_13);
   __Pyx_XDECREF(__pyx_t_14);
-  __Pyx_AddTraceback("distcorr.dist_corr_matrix", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("correlade.dcorr_matrix", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_matrix);
@@ -1855,80 +1839,26 @@ static PyObject *__pyx_f_8distcorr_dist_corr_matrix(PyObject *__pyx_v_df, CYTHON
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_8distcorr_3dist_corr_matrix(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_8distcorr_3dist_corr_matrix(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  PyObject *__pyx_v_df = 0;
-  PyObject *__pyx_v_subset_of = 0;
+static PyObject *__pyx_pw_9correlade_3dcorr_matrix(PyObject *__pyx_self, PyObject *__pyx_v_df); /*proto*/
+static char __pyx_doc_9correlade_2dcorr_matrix[] = "\n\tCreates matrix of distance correlations\n\t";
+static PyObject *__pyx_pw_9correlade_3dcorr_matrix(PyObject *__pyx_self, PyObject *__pyx_v_df) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("dist_corr_matrix (wrapper)", 0);
-  {
-    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_df,&__pyx_n_s_subset_of,0};
-    PyObject* values[2] = {0,0};
-    values[1] = ((PyObject *)Py_False);
-    if (unlikely(__pyx_kwds)) {
-      Py_ssize_t kw_args;
-      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
-      switch (pos_args) {
-        case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
-        CYTHON_FALLTHROUGH;
-        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
-        CYTHON_FALLTHROUGH;
-        case  0: break;
-        default: goto __pyx_L5_argtuple_error;
-      }
-      kw_args = PyDict_Size(__pyx_kwds);
-      switch (pos_args) {
-        case  0:
-        if (likely((values[0] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_df)) != 0)) kw_args--;
-        else goto __pyx_L5_argtuple_error;
-        CYTHON_FALLTHROUGH;
-        case  1:
-        if (kw_args > 0) {
-          PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_subset_of);
-          if (value) { values[1] = value; kw_args--; }
-        }
-      }
-      if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "dist_corr_matrix") < 0)) __PYX_ERR(0, 27, __pyx_L3_error)
-      }
-    } else {
-      switch (PyTuple_GET_SIZE(__pyx_args)) {
-        case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
-        CYTHON_FALLTHROUGH;
-        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
-        break;
-        default: goto __pyx_L5_argtuple_error;
-      }
-    }
-    __pyx_v_df = values[0];
-    __pyx_v_subset_of = values[1];
-  }
-  goto __pyx_L4_argument_unpacking_done;
-  __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("dist_corr_matrix", 0, 1, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 27, __pyx_L3_error)
-  __pyx_L3_error:;
-  __Pyx_AddTraceback("distcorr.dist_corr_matrix", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __Pyx_RefNannyFinishContext();
-  return NULL;
-  __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_8distcorr_2dist_corr_matrix(__pyx_self, __pyx_v_df, __pyx_v_subset_of);
+  __Pyx_RefNannySetupContext("dcorr_matrix (wrapper)", 0);
+  __pyx_r = __pyx_pf_9correlade_2dcorr_matrix(__pyx_self, ((PyObject *)__pyx_v_df));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_8distcorr_2dist_corr_matrix(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_df, PyObject *__pyx_v_subset_of) {
+static PyObject *__pyx_pf_9correlade_2dcorr_matrix(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_df) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
-  struct __pyx_opt_args_8distcorr_dist_corr_matrix __pyx_t_2;
-  __Pyx_RefNannySetupContext("dist_corr_matrix", 0);
+  __Pyx_RefNannySetupContext("dcorr_matrix", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_2.__pyx_n = 1;
-  __pyx_t_2.subset_of = __pyx_v_subset_of;
-  __pyx_t_1 = __pyx_f_8distcorr_dist_corr_matrix(__pyx_v_df, 0, &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 27, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_9correlade_dcorr_matrix(__pyx_v_df, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 46, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -1937,7 +1867,7 @@ static PyObject *__pyx_pf_8distcorr_2dist_corr_matrix(CYTHON_UNUSED PyObject *__
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("distcorr.dist_corr_matrix", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("correlade.dcorr_matrix", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -1945,40 +1875,41 @@ static PyObject *__pyx_pf_8distcorr_2dist_corr_matrix(CYTHON_UNUSED PyObject *__
   return __pyx_r;
 }
 
-/* "distcorr.pyx":49
+/* "correlade.pyx":73
  * 
  * 
  * def matrix_heatmap (matrix):             # <<<<<<<<<<<<<<
- * 	# Convert all to floats for SNS processing
- * 	matrix = matrix.transform(lambda x: x.astype('float64'))
+ * 	"""
+ * 	Creates heatmap of correlation matrix with Seaborn
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_8distcorr_5matrix_heatmap(PyObject *__pyx_self, PyObject *__pyx_v_matrix); /*proto*/
-static PyMethodDef __pyx_mdef_8distcorr_5matrix_heatmap = {"matrix_heatmap", (PyCFunction)__pyx_pw_8distcorr_5matrix_heatmap, METH_O, 0};
-static PyObject *__pyx_pw_8distcorr_5matrix_heatmap(PyObject *__pyx_self, PyObject *__pyx_v_matrix) {
+static PyObject *__pyx_pw_9correlade_5matrix_heatmap(PyObject *__pyx_self, PyObject *__pyx_v_matrix); /*proto*/
+static char __pyx_doc_9correlade_4matrix_heatmap[] = "\n\tCreates heatmap of correlation matrix with Seaborn\n\t";
+static PyMethodDef __pyx_mdef_9correlade_5matrix_heatmap = {"matrix_heatmap", (PyCFunction)__pyx_pw_9correlade_5matrix_heatmap, METH_O, __pyx_doc_9correlade_4matrix_heatmap};
+static PyObject *__pyx_pw_9correlade_5matrix_heatmap(PyObject *__pyx_self, PyObject *__pyx_v_matrix) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("matrix_heatmap (wrapper)", 0);
-  __pyx_r = __pyx_pf_8distcorr_4matrix_heatmap(__pyx_self, ((PyObject *)__pyx_v_matrix));
+  __pyx_r = __pyx_pf_9correlade_4matrix_heatmap(__pyx_self, ((PyObject *)__pyx_v_matrix));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "distcorr.pyx":51
- * def matrix_heatmap (matrix):
- * 	# Convert all to floats for SNS processing
+/* "correlade.pyx":79
+ * 
+ * 	# Convert all to floats as required by Seaborn graphing
  * 	matrix = matrix.transform(lambda x: x.astype('float64'))             # <<<<<<<<<<<<<<
  * 	print('Attempting graph --> assuming Pandas in Jupyter')
  * 	print(sns.heatmap(matrix))
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_8distcorr_14matrix_heatmap_lambda(PyObject *__pyx_self, PyObject *__pyx_v_x); /*proto*/
-static PyMethodDef __pyx_mdef_8distcorr_14matrix_heatmap_lambda = {"lambda", (PyCFunction)__pyx_pw_8distcorr_14matrix_heatmap_lambda, METH_O, 0};
-static PyObject *__pyx_pw_8distcorr_14matrix_heatmap_lambda(PyObject *__pyx_self, PyObject *__pyx_v_x) {
+static PyObject *__pyx_pw_9correlade_14matrix_heatmap_lambda(PyObject *__pyx_self, PyObject *__pyx_v_x); /*proto*/
+static PyMethodDef __pyx_mdef_9correlade_14matrix_heatmap_lambda = {"lambda", (PyCFunction)__pyx_pw_9correlade_14matrix_heatmap_lambda, METH_O, 0};
+static PyObject *__pyx_pw_9correlade_14matrix_heatmap_lambda(PyObject *__pyx_self, PyObject *__pyx_v_x) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("lambda (wrapper)", 0);
@@ -1996,9 +1927,9 @@ static PyObject *__pyx_lambda_funcdef_lambda(CYTHON_UNUSED PyObject *__pyx_self,
   PyObject *__pyx_t_2 = NULL;
   __Pyx_RefNannySetupContext("lambda", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_x, __pyx_n_s_astype); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 51, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_x, __pyx_n_s_astype); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 79, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__3, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 51, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple__3, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 79, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_r = __pyx_t_2;
@@ -2009,7 +1940,7 @@ static PyObject *__pyx_lambda_funcdef_lambda(CYTHON_UNUSED PyObject *__pyx_self,
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_AddTraceback("distcorr.matrix_heatmap.lambda", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("correlade.matrix_heatmap.lambda", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -2017,15 +1948,15 @@ static PyObject *__pyx_lambda_funcdef_lambda(CYTHON_UNUSED PyObject *__pyx_self,
   return __pyx_r;
 }
 
-/* "distcorr.pyx":49
+/* "correlade.pyx":73
  * 
  * 
  * def matrix_heatmap (matrix):             # <<<<<<<<<<<<<<
- * 	# Convert all to floats for SNS processing
- * 	matrix = matrix.transform(lambda x: x.astype('float64'))
+ * 	"""
+ * 	Creates heatmap of correlation matrix with Seaborn
  */
 
-static PyObject *__pyx_pf_8distcorr_4matrix_heatmap(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix) {
+static PyObject *__pyx_pf_9correlade_4matrix_heatmap(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_matrix) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -2036,16 +1967,16 @@ static PyObject *__pyx_pf_8distcorr_4matrix_heatmap(CYTHON_UNUSED PyObject *__py
   __Pyx_RefNannySetupContext("matrix_heatmap", 0);
   __Pyx_INCREF(__pyx_v_matrix);
 
-  /* "distcorr.pyx":51
- * def matrix_heatmap (matrix):
- * 	# Convert all to floats for SNS processing
+  /* "correlade.pyx":79
+ * 
+ * 	# Convert all to floats as required by Seaborn graphing
  * 	matrix = matrix.transform(lambda x: x.astype('float64'))             # <<<<<<<<<<<<<<
  * 	print('Attempting graph --> assuming Pandas in Jupyter')
  * 	print(sns.heatmap(matrix))
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_matrix, __pyx_n_s_transform); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 51, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_matrix, __pyx_n_s_transform); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 79, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_CyFunction_NewEx(&__pyx_mdef_8distcorr_14matrix_heatmap_lambda, 0, __pyx_n_s_matrix_heatmap_locals_lambda, NULL, __pyx_n_s_distcorr, __pyx_d, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 51, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_NewEx(&__pyx_mdef_9correlade_14matrix_heatmap_lambda, 0, __pyx_n_s_matrix_heatmap_locals_lambda, NULL, __pyx_n_s_correlade, __pyx_d, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 79, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
@@ -2058,14 +1989,14 @@ static PyObject *__pyx_pf_8distcorr_4matrix_heatmap(CYTHON_UNUSED PyObject *__py
     }
   }
   if (!__pyx_t_4) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 51, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 79, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_GOTREF(__pyx_t_1);
   } else {
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_2)) {
       PyObject *__pyx_temp[2] = {__pyx_t_4, __pyx_t_3};
-      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 51, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 79, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -2074,20 +2005,20 @@ static PyObject *__pyx_pf_8distcorr_4matrix_heatmap(CYTHON_UNUSED PyObject *__py
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
       PyObject *__pyx_temp[2] = {__pyx_t_4, __pyx_t_3};
-      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 51, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 79, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     } else
     #endif
     {
-      __pyx_t_5 = PyTuple_New(1+1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 51, __pyx_L1_error)
+      __pyx_t_5 = PyTuple_New(1+1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 79, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_GIVEREF(__pyx_t_4); PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_4); __pyx_t_4 = NULL;
       __Pyx_GIVEREF(__pyx_t_3);
       PyTuple_SET_ITEM(__pyx_t_5, 0+1, __pyx_t_3);
       __pyx_t_3 = 0;
-      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 51, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 79, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     }
@@ -2096,25 +2027,22 @@ static PyObject *__pyx_pf_8distcorr_4matrix_heatmap(CYTHON_UNUSED PyObject *__py
   __Pyx_DECREF_SET(__pyx_v_matrix, __pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "distcorr.pyx":52
- * 	# Convert all to floats for SNS processing
+  /* "correlade.pyx":80
+ * 	# Convert all to floats as required by Seaborn graphing
  * 	matrix = matrix.transform(lambda x: x.astype('float64'))
  * 	print('Attempting graph --> assuming Pandas in Jupyter')             # <<<<<<<<<<<<<<
  * 	print(sns.heatmap(matrix))
- * 
  */
-  if (__Pyx_PrintOne(0, __pyx_kp_s_Attempting_graph_assuming_Pandas) < 0) __PYX_ERR(0, 52, __pyx_L1_error)
+  if (__Pyx_PrintOne(0, __pyx_kp_s_Attempting_graph_assuming_Pandas) < 0) __PYX_ERR(0, 80, __pyx_L1_error)
 
-  /* "distcorr.pyx":53
+  /* "correlade.pyx":81
  * 	matrix = matrix.transform(lambda x: x.astype('float64'))
  * 	print('Attempting graph --> assuming Pandas in Jupyter')
  * 	print(sns.heatmap(matrix))             # <<<<<<<<<<<<<<
- * 
- * 
  */
-  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_sns); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 53, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_sns); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 81, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_heatmap); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 53, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_heatmap); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 81, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -2128,13 +2056,13 @@ static PyObject *__pyx_pf_8distcorr_4matrix_heatmap(CYTHON_UNUSED PyObject *__py
     }
   }
   if (!__pyx_t_2) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_v_matrix); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 53, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_v_matrix); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 81, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
   } else {
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_5)) {
       PyObject *__pyx_temp[2] = {__pyx_t_2, __pyx_v_matrix};
-      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_5, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 53, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_5, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 81, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_GOTREF(__pyx_t_1);
     } else
@@ -2142,33 +2070,33 @@ static PyObject *__pyx_pf_8distcorr_4matrix_heatmap(CYTHON_UNUSED PyObject *__py
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_5)) {
       PyObject *__pyx_temp[2] = {__pyx_t_2, __pyx_v_matrix};
-      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_5, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 53, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_5, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 81, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_GOTREF(__pyx_t_1);
     } else
     #endif
     {
-      __pyx_t_3 = PyTuple_New(1+1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 53, __pyx_L1_error)
+      __pyx_t_3 = PyTuple_New(1+1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 81, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_GIVEREF(__pyx_t_2); PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_2); __pyx_t_2 = NULL;
       __Pyx_INCREF(__pyx_v_matrix);
       __Pyx_GIVEREF(__pyx_v_matrix);
       PyTuple_SET_ITEM(__pyx_t_3, 0+1, __pyx_v_matrix);
-      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_3, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 53, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_3, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 81, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     }
   }
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (__Pyx_PrintOne(0, __pyx_t_1) < 0) __PYX_ERR(0, 53, __pyx_L1_error)
+  if (__Pyx_PrintOne(0, __pyx_t_1) < 0) __PYX_ERR(0, 81, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "distcorr.pyx":49
+  /* "correlade.pyx":73
  * 
  * 
  * def matrix_heatmap (matrix):             # <<<<<<<<<<<<<<
- * 	# Convert all to floats for SNS processing
- * 	matrix = matrix.transform(lambda x: x.astype('float64'))
+ * 	"""
+ * 	Creates heatmap of correlation matrix with Seaborn
  */
 
   /* function exit code */
@@ -2180,7 +2108,7 @@ static PyObject *__pyx_pf_8distcorr_4matrix_heatmap(CYTHON_UNUSED PyObject *__py
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5);
-  __Pyx_AddTraceback("distcorr.matrix_heatmap", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("correlade.matrix_heatmap", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_matrix);
@@ -2190,25 +2118,25 @@ static PyObject *__pyx_pf_8distcorr_4matrix_heatmap(CYTHON_UNUSED PyObject *__py
 }
 
 static PyMethodDef __pyx_methods[] = {
-  {"dist_corr", (PyCFunction)__pyx_pw_8distcorr_1dist_corr, METH_VARARGS|METH_KEYWORDS, 0},
-  {"dist_corr_matrix", (PyCFunction)__pyx_pw_8distcorr_3dist_corr_matrix, METH_VARARGS|METH_KEYWORDS, 0},
+  {"dcorr", (PyCFunction)__pyx_pw_9correlade_1dcorr, METH_VARARGS|METH_KEYWORDS, __pyx_doc_9correlade_dcorr},
+  {"dcorr_matrix", (PyCFunction)__pyx_pw_9correlade_3dcorr_matrix, METH_O, __pyx_doc_9correlade_2dcorr_matrix},
   {0, 0, 0, 0}
 };
 
 #if PY_MAJOR_VERSION >= 3
 #if CYTHON_PEP489_MULTI_PHASE_INIT
 static PyObject* __pyx_pymod_create(PyObject *spec, PyModuleDef *def); /*proto*/
-static int __pyx_pymod_exec_distcorr(PyObject* module); /*proto*/
+static int __pyx_pymod_exec_correlade(PyObject* module); /*proto*/
 static PyModuleDef_Slot __pyx_moduledef_slots[] = {
   {Py_mod_create, (void*)__pyx_pymod_create},
-  {Py_mod_exec, (void*)__pyx_pymod_exec_distcorr},
+  {Py_mod_exec, (void*)__pyx_pymod_exec_correlade},
   {0, NULL}
 };
 #endif
 
 static struct PyModuleDef __pyx_moduledef = {
     PyModuleDef_HEAD_INIT,
-    "distcorr",
+    "correlade",
     __pyx_k_Author_Ian_Coleman_Purpose_Dist, /* m_doc */
   #if CYTHON_PEP489_MULTI_PHASE_INIT
     0, /* m_size */
@@ -2235,11 +2163,11 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_axis, __pyx_k_axis, sizeof(__pyx_k_axis), 0, 0, 1, 1},
   {&__pyx_n_s_cline_in_traceback, __pyx_k_cline_in_traceback, sizeof(__pyx_k_cline_in_traceback), 0, 0, 1, 1},
   {&__pyx_n_s_columns, __pyx_k_columns, sizeof(__pyx_k_columns), 0, 0, 1, 1},
+  {&__pyx_n_s_correlade, __pyx_k_correlade, sizeof(__pyx_k_correlade), 0, 0, 1, 1},
+  {&__pyx_kp_s_correlade_pyx, __pyx_k_correlade_pyx, sizeof(__pyx_k_correlade_pyx), 0, 0, 1, 0},
   {&__pyx_n_s_dcor, __pyx_k_dcor, sizeof(__pyx_k_dcor), 0, 0, 1, 1},
   {&__pyx_n_s_df, __pyx_k_df, sizeof(__pyx_k_df), 0, 0, 1, 1},
   {&__pyx_n_s_distance_correlation, __pyx_k_distance_correlation, sizeof(__pyx_k_distance_correlation), 0, 0, 1, 1},
-  {&__pyx_n_s_distcorr, __pyx_k_distcorr, sizeof(__pyx_k_distcorr), 0, 0, 1, 1},
-  {&__pyx_kp_s_distcorr_pyx, __pyx_k_distcorr_pyx, sizeof(__pyx_k_distcorr_pyx), 0, 0, 1, 0},
   {&__pyx_n_s_end, __pyx_k_end, sizeof(__pyx_k_end), 0, 0, 1, 1},
   {&__pyx_n_s_file, __pyx_k_file, sizeof(__pyx_k_file), 0, 0, 1, 1},
   {&__pyx_n_s_float64, __pyx_k_float64, sizeof(__pyx_k_float64), 0, 0, 1, 1},
@@ -2260,14 +2188,13 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_seaborn, __pyx_k_seaborn, sizeof(__pyx_k_seaborn), 0, 0, 1, 1},
   {&__pyx_n_s_shape, __pyx_k_shape, sizeof(__pyx_k_shape), 0, 0, 1, 1},
   {&__pyx_n_s_sns, __pyx_k_sns, sizeof(__pyx_k_sns), 0, 0, 1, 1},
-  {&__pyx_n_s_subset_of, __pyx_k_subset_of, sizeof(__pyx_k_subset_of), 0, 0, 1, 1},
   {&__pyx_n_s_sys, __pyx_k_sys, sizeof(__pyx_k_sys), 0, 0, 1, 1},
   {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
   {&__pyx_n_s_transform, __pyx_k_transform, sizeof(__pyx_k_transform), 0, 0, 1, 1},
   {0, 0, 0, 0, 0, 0, 0}
 };
 static int __Pyx_InitCachedBuiltins(void) {
-  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(0, 42, __pyx_L1_error)
+  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(0, 66, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
   return -1;
@@ -2277,50 +2204,50 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "distcorr.pyx":33
- * 
+  /* "correlade.pyx":58
+ * 	cols = df.shape[1]
  * 	if rows > 2000:
  * 		df = df.sample(2000)             # <<<<<<<<<<<<<<
- * 
  * 	if cols > 2000:
+ * 		df = df.sample(2000, axis = 1)
  */
-  __pyx_tuple_ = PyTuple_Pack(1, __pyx_int_2000); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 33, __pyx_L1_error)
+  __pyx_tuple_ = PyTuple_Pack(1, __pyx_int_2000); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 58, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple_);
   __Pyx_GIVEREF(__pyx_tuple_);
 
-  /* "distcorr.pyx":36
- * 
+  /* "correlade.pyx":60
+ * 		df = df.sample(2000)
  * 	if cols > 2000:
  * 		df = df.sample(2000, axis = 1)             # <<<<<<<<<<<<<<
  * 
  * 	cdef int no_rows = df.shape[0]
  */
-  __pyx_tuple__2 = PyTuple_Pack(1, __pyx_int_2000); if (unlikely(!__pyx_tuple__2)) __PYX_ERR(0, 36, __pyx_L1_error)
+  __pyx_tuple__2 = PyTuple_Pack(1, __pyx_int_2000); if (unlikely(!__pyx_tuple__2)) __PYX_ERR(0, 60, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__2);
   __Pyx_GIVEREF(__pyx_tuple__2);
 
-  /* "distcorr.pyx":51
- * def matrix_heatmap (matrix):
- * 	# Convert all to floats for SNS processing
+  /* "correlade.pyx":79
+ * 
+ * 	# Convert all to floats as required by Seaborn graphing
  * 	matrix = matrix.transform(lambda x: x.astype('float64'))             # <<<<<<<<<<<<<<
  * 	print('Attempting graph --> assuming Pandas in Jupyter')
  * 	print(sns.heatmap(matrix))
  */
-  __pyx_tuple__3 = PyTuple_Pack(1, __pyx_n_s_float64); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(0, 51, __pyx_L1_error)
+  __pyx_tuple__3 = PyTuple_Pack(1, __pyx_n_s_float64); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(0, 79, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__3);
   __Pyx_GIVEREF(__pyx_tuple__3);
 
-  /* "distcorr.pyx":49
+  /* "correlade.pyx":73
  * 
  * 
  * def matrix_heatmap (matrix):             # <<<<<<<<<<<<<<
- * 	# Convert all to floats for SNS processing
- * 	matrix = matrix.transform(lambda x: x.astype('float64'))
+ * 	"""
+ * 	Creates heatmap of correlation matrix with Seaborn
  */
-  __pyx_tuple__4 = PyTuple_Pack(1, __pyx_n_s_matrix); if (unlikely(!__pyx_tuple__4)) __PYX_ERR(0, 49, __pyx_L1_error)
+  __pyx_tuple__4 = PyTuple_Pack(1, __pyx_n_s_matrix); if (unlikely(!__pyx_tuple__4)) __PYX_ERR(0, 73, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__4);
   __Pyx_GIVEREF(__pyx_tuple__4);
-  __pyx_codeobj__5 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__4, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_distcorr_pyx, __pyx_n_s_matrix_heatmap, 49, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__5)) __PYX_ERR(0, 49, __pyx_L1_error)
+  __pyx_codeobj__5 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__4, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_correlade_pyx, __pyx_n_s_matrix_heatmap, 73, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__5)) __PYX_ERR(0, 73, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -2428,11 +2355,11 @@ static int __Pyx_modinit_function_import_code(void) {
 
 
 #if PY_MAJOR_VERSION < 3
-__Pyx_PyMODINIT_FUNC initdistcorr(void) CYTHON_SMALL_CODE; /*proto*/
-__Pyx_PyMODINIT_FUNC initdistcorr(void)
+__Pyx_PyMODINIT_FUNC initcorrelade(void) CYTHON_SMALL_CODE; /*proto*/
+__Pyx_PyMODINIT_FUNC initcorrelade(void)
 #else
-__Pyx_PyMODINIT_FUNC PyInit_distcorr(void) CYTHON_SMALL_CODE; /*proto*/
-__Pyx_PyMODINIT_FUNC PyInit_distcorr(void)
+__Pyx_PyMODINIT_FUNC PyInit_correlade(void) CYTHON_SMALL_CODE; /*proto*/
+__Pyx_PyMODINIT_FUNC PyInit_correlade(void)
 #if CYTHON_PEP489_MULTI_PHASE_INIT
 {
   return PyModuleDef_Init(&__pyx_moduledef);
@@ -2472,7 +2399,7 @@ bad:
 }
 
 
-static int __pyx_pymod_exec_distcorr(PyObject *__pyx_pyinit_module)
+static int __pyx_pymod_exec_correlade(PyObject *__pyx_pyinit_module)
 #endif
 #endif
 {
@@ -2493,7 +2420,7 @@ if (!__Pyx_RefNanny) {
       Py_FatalError("failed to import 'refnanny' module");
 }
 #endif
-  __Pyx_RefNannySetupContext("__Pyx_PyMODINIT_FUNC PyInit_distcorr(void)", 0);
+  __Pyx_RefNannySetupContext("__Pyx_PyMODINIT_FUNC PyInit_correlade(void)", 0);
   if (__Pyx_check_binary_version() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_empty_tuple = PyTuple_New(0); if (unlikely(!__pyx_empty_tuple)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_empty_bytes = PyBytes_FromStringAndSize("", 0); if (unlikely(!__pyx_empty_bytes)) __PYX_ERR(0, 1, __pyx_L1_error)
@@ -2529,7 +2456,7 @@ if (!__Pyx_RefNanny) {
   Py_INCREF(__pyx_m);
   #else
   #if PY_MAJOR_VERSION < 3
-  __pyx_m = Py_InitModule4("distcorr", __pyx_methods, __pyx_k_Author_Ian_Coleman_Purpose_Dist, 0, PYTHON_API_VERSION); Py_XINCREF(__pyx_m);
+  __pyx_m = Py_InitModule4("correlade", __pyx_methods, __pyx_k_Author_Ian_Coleman_Purpose_Dist, 0, PYTHON_API_VERSION); Py_XINCREF(__pyx_m);
   #else
   __pyx_m = PyModule_Create(&__pyx_moduledef);
   #endif
@@ -2548,14 +2475,14 @@ if (!__Pyx_RefNanny) {
   #if PY_MAJOR_VERSION < 3 && (__PYX_DEFAULT_STRING_ENCODING_IS_ASCII || __PYX_DEFAULT_STRING_ENCODING_IS_DEFAULT)
   if (__Pyx_init_sys_getdefaultencoding_params() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
-  if (__pyx_module_is_main_distcorr) {
+  if (__pyx_module_is_main_correlade) {
     if (PyObject_SetAttrString(__pyx_m, "__name__", __pyx_n_s_main) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   }
   #if PY_MAJOR_VERSION >= 3
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(0, 1, __pyx_L1_error)
-    if (!PyDict_GetItemString(modules, "distcorr")) {
-      if (unlikely(PyDict_SetItemString(modules, "distcorr", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
+    if (!PyDict_GetItemString(modules, "correlade")) {
+      if (unlikely(PyDict_SetItemString(modules, "correlade", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
     }
   }
   #endif
@@ -2576,79 +2503,79 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_patch_abc() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
 
-  /* "distcorr.pyx":14
+  /* "correlade.pyx":16
  * 
  * 
  * import dcor             # <<<<<<<<<<<<<<
  * import pandas as pd
  * from sys import argv
  */
-  __pyx_t_1 = __Pyx_Import(__pyx_n_s_dcor, 0, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 14, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_Import(__pyx_n_s_dcor, 0, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 16, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_dcor, __pyx_t_1) < 0) __PYX_ERR(0, 14, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_dcor, __pyx_t_1) < 0) __PYX_ERR(0, 16, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "distcorr.pyx":15
+  /* "correlade.pyx":17
  * 
  * import dcor
  * import pandas as pd             # <<<<<<<<<<<<<<
  * from sys import argv
  * import seaborn as sns
  */
-  __pyx_t_1 = __Pyx_Import(__pyx_n_s_pandas, 0, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 15, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_Import(__pyx_n_s_pandas, 0, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 17, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_pd, __pyx_t_1) < 0) __PYX_ERR(0, 15, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_pd, __pyx_t_1) < 0) __PYX_ERR(0, 17, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "distcorr.pyx":16
+  /* "correlade.pyx":18
  * import dcor
  * import pandas as pd
  * from sys import argv             # <<<<<<<<<<<<<<
  * import seaborn as sns
  * 
  */
-  __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 16, __pyx_L1_error)
+  __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 18, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_n_s_argv);
   __Pyx_GIVEREF(__pyx_n_s_argv);
   PyList_SET_ITEM(__pyx_t_1, 0, __pyx_n_s_argv);
-  __pyx_t_2 = __Pyx_Import(__pyx_n_s_sys, __pyx_t_1, -1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 16, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_Import(__pyx_n_s_sys, __pyx_t_1, -1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 18, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_argv); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 16, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_argv); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 18, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_argv, __pyx_t_1) < 0) __PYX_ERR(0, 16, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_argv, __pyx_t_1) < 0) __PYX_ERR(0, 18, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "distcorr.pyx":17
+  /* "correlade.pyx":19
  * import pandas as pd
  * from sys import argv
  * import seaborn as sns             # <<<<<<<<<<<<<<
  * 
- * # Dcor
+ * 
  */
-  __pyx_t_2 = __Pyx_Import(__pyx_n_s_seaborn, 0, -1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 17, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_Import(__pyx_n_s_seaborn, 0, -1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 19, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_sns, __pyx_t_2) < 0) __PYX_ERR(0, 17, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_sns, __pyx_t_2) < 0) __PYX_ERR(0, 19, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "distcorr.pyx":49
+  /* "correlade.pyx":73
  * 
  * 
  * def matrix_heatmap (matrix):             # <<<<<<<<<<<<<<
- * 	# Convert all to floats for SNS processing
- * 	matrix = matrix.transform(lambda x: x.astype('float64'))
+ * 	"""
+ * 	Creates heatmap of correlation matrix with Seaborn
  */
-  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_8distcorr_5matrix_heatmap, NULL, __pyx_n_s_distcorr); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 49, __pyx_L1_error)
+  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_9correlade_5matrix_heatmap, NULL, __pyx_n_s_correlade); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 73, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_matrix_heatmap, __pyx_t_2) < 0) __PYX_ERR(0, 49, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_matrix_heatmap, __pyx_t_2) < 0) __PYX_ERR(0, 73, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "distcorr.pyx":1
- * #!/usr/bin/env Python3             # <<<<<<<<<<<<<<
- * """
+  /* "correlade.pyx":1
+ * """             # <<<<<<<<<<<<<<
  * Author: Ian Coleman
+ * Purpose: Distance Correlation matrix and graphic for Pandas
  */
   __pyx_t_2 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -2663,11 +2590,11 @@ if (!__Pyx_RefNanny) {
   __Pyx_XDECREF(__pyx_t_2);
   if (__pyx_m) {
     if (__pyx_d) {
-      __Pyx_AddTraceback("init distcorr", 0, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init correlade", 0, __pyx_lineno, __pyx_filename);
     }
     Py_DECREF(__pyx_m); __pyx_m = 0;
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init distcorr");
+    PyErr_SetString(PyExc_ImportError, "init correlade");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();

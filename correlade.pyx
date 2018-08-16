@@ -19,7 +19,7 @@ from sys import argv
 import seaborn as sns
 
 
-cpdef dist_corr (df, graph=None):
+cpdef dcorr (df, graph=None):
 	"""
 
 	Master function
@@ -36,14 +36,14 @@ cpdef dist_corr (df, graph=None):
 
 	"""
 
-	matrix = dist_corr_matrix(df)
+	matrix = dcorr_matrix(df)
 	print(matrix)
 
 	if graph is not None:
 		matrix_heatmap(matrix)
 
 
-cpdef dist_corr_matrix (df):
+cpdef dcorr_matrix (df):
 	"""
 	Creates matrix of distance correlations
 	"""
