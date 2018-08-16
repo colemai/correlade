@@ -17,6 +17,7 @@ import dcor
 import pandas as pd
 from sys import argv
 import seaborn as sns
+import distcorr
 
 
 cpdef dcorr (df, graph=None):
@@ -65,7 +66,7 @@ cpdef dcorr_matrix (df):
 
 	for x in range(0,no_cols):
 		for y in range(0,no_cols):
-			matrix.iloc[y,x] = dcor.distance_correlation(df.iloc[0:no_rows, x], df.iloc[0:no_rows, y])
+			matrix.iloc[y,x] = distcorr.distcorr(df.iloc[0:no_rows, x], df.iloc[0:no_rows, y])
 
 	return matrix
 
