@@ -1,4 +1,3 @@
-#!/usr/bin/env Python3 
 """
 Author: Ian Coleman
 Purpose: Distance Correlation matrix and graphic for Pandas
@@ -8,6 +7,9 @@ change dist_corr to a self method
 change subset_of to length of df
 add graphic element 
 replace the dcor package with the actual formula and code
+documentation to be fitted to standards
+check what happens in edge cases e.g string in df
+number of chars on each line
 """
 
 
@@ -16,22 +18,44 @@ import pandas as pd
 from sys import argv
 import seaborn as sns
 
-# Dcor
+
 cpdef dist_corr (df, graph=None):
+	"""
+
+	Master function
+
+	Creates matrix of distance correlation values for each pairing of columns
+	in the provided dataframe
+
+	If there are more than 2000 rows or columns, a random selection of 2000
+	are used for the calculation
+
+	Parameters:
+	df --> a dataframe of numerical values
+	graph --> give any int here if you want a heatmap of the correlation matrix
+
+	"""
+
 	matrix = dist_corr_matrix(df)
 	print(matrix)
+
 	if graph is not None:
 		matrix_heatmap(matrix)
 
 
-cpdef dist_corr_matrix (df, subset_of = False):
+cpdef dist_corr_matrix (df):
+	"""
+	Creates matrix of distance correlations
+	"""
+
+	# Make empty df to house correlation values
 	matrix = pd.DataFrame(index = df.columns, columns = df.columns)
+	
+	# Ensure no more than 2000 rows 
 	rows = df.shape[0]
 	cols = df.shape[1]
-
 	if rows > 2000:
 		df = df.sample(2000)
-
 	if cols > 2000:
 		df = df.sample(2000, axis = 1)
 
@@ -47,27 +71,11 @@ cpdef dist_corr_matrix (df, subset_of = False):
 
 
 def matrix_heatmap (matrix):
-	# Convert all to floats for SNS processing
+	"""
+	Creates heatmap of correlation matrix with Seaborn
+	"""
+	
+	# Convert all to floats as required by Seaborn graphing
 	matrix = matrix.transform(lambda x: x.astype('float64'))
 	print('Attempting graph --> assuming Pandas in Jupyter')
 	print(sns.heatmap(matrix))  
-
-
-	# Convert all to floats for SNS processing
-	# matrix = matrix.transform(lambda x: x.astype('float64'))
-	# print(sns.heatmap(matrix))    
-	    
-
-# # Create df framework for dcor results
-# matrix = pd.DataFrame(index=df.columns, columns = df.columns)
-
-# # Iterate through column pairings and calculate dcor, adding to df
-# for x in df.columns:
-#     for y in df.columns:
-#         matrix.loc[y,x] = dcor.distance_correlation(df.loc[1:2000, x], df.loc[1:2000, y])
-
-# # Convert all to floats for SNS processing
-# matrix = matrix.transform(lambda x: x.astype('float64'))
-# print(sns.heatmap(matrix))    
-    
-# matrix
