@@ -5,15 +5,15 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="correlade",
-    version="1.0",
+    version="0.1",
     author="Ian Coleman",
     author_email="colemai@tcd.ie",
     description="Correlation matrix of distance correlation",
-    long_description=Pearson correlation only detects linear relationships\
+    long_description="Pearson correlation only detects linear relationships\
     well, distance correlation is much more flexible. It's more computationally\
     intensive, so this package will randomly select 2000 rows if you feed it more\
     than that. There are other distance correlation computing packages around, \
-    this one is just very quick and easy, like Pandas' corr() method 
+    this one is just very quick and easy, like Pandas' corr() method ",
     long_description_content_type="text/markdown",
     url="https://github.com/colemai/correlade",
     packages=setuptools.find_packages(),
