@@ -1,0 +1,8 @@
+README.md
+setup.py
+correlade/__init__.py
+correlade/setup_cython.py
+correlade.egg-info/PKG-INFO
+correlade.egg-info/SOURCES.txt
+correlade.egg-info/dependency_links.txt
+correlade.egg-info/top_level.txt
