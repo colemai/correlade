@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="correlade",
-    version="0.2",
+    version="0.2.1",
     author="Ian Coleman",
     author_email="colemai@tcd.ie",
     description="Correlation matrix of distance correlation",
