@@ -1,3 +1,5 @@
+#include <Python.h>
+
 #include <iostream>
 
 int main()
