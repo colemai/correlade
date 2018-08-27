@@ -12,15 +12,14 @@ check what happens in edge cases e.g string in df
 number of chars on each line
 """
 
-
-import dcor
 import pandas as pd
 from sys import argv
 import seaborn as sns
 import distcorr
 
 
-cpdef dcorr (df, graph=None):
+
+cpdef dcorr (df, graph=None, observs=0):
 	"""
 
 	Master function
@@ -37,14 +36,14 @@ cpdef dcorr (df, graph=None):
 
 	"""
 
-	matrix = dcorr_matrix(df)
+	matrix = dcorr_matrix(df, observs)
 	print(matrix)
 
 	if graph is not None:
 		matrix_heatmap(matrix)
 
 
-cpdef dcorr_matrix (df):
+cpdef dcorr_matrix (df, observs):
 	"""
 	Creates matrix of distance correlations
 	"""
@@ -52,9 +51,13 @@ cpdef dcorr_matrix (df):
 	# Make empty df to house correlation values
 	matrix = pd.DataFrame(index = df.columns, columns = df.columns)
 	
-	# Ensure no more than 2000 rows 
-	rows = df.shape[0]
+	# Ensure no more than 2000 rows, use number provided if any
+	if observs == 0:
+		rows = df.shape[0]
+	else:
+		rows = observs
 	cols = df.shape[1]
+
 	if rows > 2000:
 		df = df.sample(2000)
 	if cols > 2000:

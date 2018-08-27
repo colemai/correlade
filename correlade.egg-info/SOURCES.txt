@@ -1,3 +1,4 @@
+LICENSE.md
 README.md
 setup.py
 correlade/correlade.c
@@ -6,4 +7,5 @@ correlade.egg-info/PKG-INFO
 correlade.egg-info/SOURCES.txt
 correlade.egg-info/dependency_links.txt
 correlade.egg-info/not-zip-safe
+correlade.egg-info/requires.txt
 correlade.egg-info/top_level.txt

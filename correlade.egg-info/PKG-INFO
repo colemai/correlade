@@ -1,14 +1,33 @@
-Metadata-Version: 2.1
+Metadata-Version: 1.1
 Name: correlade
-Version: 0.2.12
-Summary: Correlation matrix of distance correlation
+Version: 0.2.17
+Summary: Distance correlation matrix and graph for a given set of variables
 Home-page: https://github.com/colemai/correlade
 Author: Ian Coleman
 Author-email: colemai@tcd.ie
-License: UNKNOWN
-Description: Pearson correlation only detects linear relationships    well, distance correlation is much more flexible. It's more computationally    intensive, so this package will randomly select 2000 rows if you feed it more    than that. There are other distance correlation computing packages around,     this one is just very quick and easy, like Pandas' corr() method 
-Platform: UNKNOWN
+License: MIT
+Description: Pearson correlation only really detects linear relationships. Distance Correlation is a better measure, detecting more varied dependency relationships between variables.
+        
+        This package aims to give a one-liner that'll be super useful for preliminary data analysis. A matrix of pairwise distance correlations and also a heatmap of these reults.
+        
+        Because this correlation measure is more computationally expensive, if you feed it more than 2000 observations it will randomly select 2000 rows on which to base the calculation.
+        
+Keywords: correlation data-science pandas
+Platform: Linux
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: MIT
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Cython
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
 Classifier: Programming Language :: Python :: 3
-Classifier: License :: OSI Approved :: MIT License
-Classifier: Operating System :: OS Independent
-Description-Content-Type: text/markdown
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Mathematics
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Provides: setup_template_cython

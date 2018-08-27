@@ -1,9 +1,0 @@
-README.md
-setup.py
-correlade/correlade.c
-correlade.correlade.egg-info/PKG-INFO
-correlade.correlade.egg-info/SOURCES.txt
-correlade.correlade.egg-info/dependency_links.txt
-correlade.correlade.egg-info/not-zip-safe
-correlade.correlade.egg-info/requires.txt
-correlade.correlade.egg-info/top_level.txt
