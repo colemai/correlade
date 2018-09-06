@@ -210,7 +210,7 @@ datafiles.append( ('.', detected_docs) )
 #
 import ast
 init_py_path = os.path.join(libname, '__init__.py')
-version = '0.2.17'
+version = '1.0.1'
 try:
     with open(init_py_path) as f:
         for line in f:
@@ -262,7 +262,6 @@ setup(
     description = SHORTDESC,
     long_description = DESC,
 
-    license = "MIT",
 
     # free-form text field; http://stackoverflow.com/questions/34994130/what-platforms-argument-to-setup-in-setup-py-does
     platforms = ["Linux"],
@@ -277,8 +276,7 @@ setup(
     classifiers = [ "Development Status :: 4 - Beta",
                     "Environment :: Console",
                     "Intended Audience :: Developers",
-                    "Intended Audience :: Science/Research",
-                    "License :: MIT",  
+                    "Intended Audience :: Science/Research", 
                     "Operating System :: POSIX :: Linux",
                     "Programming Language :: Cython",
                     "Programming Language :: Python",

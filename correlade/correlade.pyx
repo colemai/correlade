@@ -10,6 +10,11 @@ replace the dcor package with the actual formula and code
 documentation to be fitted to standards
 check what happens in edge cases e.g string in df
 number of chars on each line
+
+Next things to do
+Make seaborn a dependency
+Make users not have to install cython
+Only import the heatmap part of seaborn
 """
 
 import pandas as pd

@@ -1,11 +1,11 @@
 Metadata-Version: 1.1
 Name: correlade
-Version: 0.2.17
+Version: 1.0.1
 Summary: Distance correlation matrix and graph for a given set of variables
 Home-page: https://github.com/colemai/correlade
 Author: Ian Coleman
 Author-email: colemai@tcd.ie
-License: MIT
+License: UNKNOWN
 Description: Pearson correlation only really detects linear relationships. Distance Correlation is a better measure, detecting more varied dependency relationships between variables.
         
         This package aims to give a one-liner that'll be super useful for preliminary data analysis. A matrix of pairwise distance correlations and also a heatmap of these reults.
@@ -18,7 +18,6 @@ Classifier: Development Status :: 4 - Beta
 Classifier: Environment :: Console
 Classifier: Intended Audience :: Developers
 Classifier: Intended Audience :: Science/Research
-Classifier: License :: MIT
 Classifier: Operating System :: POSIX :: Linux
 Classifier: Programming Language :: Cython
 Classifier: Programming Language :: Python
