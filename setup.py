@@ -210,7 +210,7 @@ datafiles.append( ('.', detected_docs) )
 #
 import ast
 init_py_path = os.path.join(libname, '__init__.py')
-version = '1.0.1'
+version = '1.0.2'
 try:
     with open(init_py_path) as f:
         for line in f:

@@ -73,8 +73,6 @@ cpdef dcorr_matrix (df, obs):
 	cdef int no_cols = df.shape[1]
 	cdef int x, y
 
-	print('AAAAAAAAA: ', no_rows)
-
 	for x in range(0,no_cols):
 		for y in range(0,no_cols):
 			matrix.iloc[y,x] = distcorr.distcorr(df.iloc[0:no_rows, x], df.iloc[0:no_rows, y])
