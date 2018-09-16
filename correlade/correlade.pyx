@@ -15,6 +15,7 @@ Next things to do
 Make seaborn a dependency
 Make users not have to install cython
 Only import the heatmap part of seaborn
+Check if in pandas and if not graph through bash plotting
 """
 
 import pandas as pd
