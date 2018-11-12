@@ -8,11 +8,14 @@ Because this correlation measure is more computationally expensive, if you feed 
 
 To install:
 
+```
 pip3 install cython <br>
 pip3 install git+https://github.com/hoihui/distcorr <br>
 pip3 install correlade <br>
+```
 
 To use: <br>
+```
 from correlade import correlade <br>
 correlade.dcorr(df) <br>
-
+```
