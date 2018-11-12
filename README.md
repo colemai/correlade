@@ -9,13 +9,13 @@ Because this correlation measure is more computationally expensive, if you feed 
 To install:
 
 ```
-pip3 install cython <br>
-pip3 install git+https://github.com/hoihui/distcorr <br>
-pip3 install correlade <br>
+pip3 install cython
+pip3 install git+https://github.com/hoihui/distcorr
+pip3 install correlade 
 ```
 
 To use: <br>
 ```
-from correlade import correlade <br>
-correlade.dcorr(df) <br>
+from correlade import correlade
+correlade.dcorr(df)
 ```
